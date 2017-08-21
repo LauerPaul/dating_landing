@@ -1,0 +1,56 @@
+/* 4th-section */
+.section-4 {
+	padding: 54px 0 70px;
+
+	.title {
+		color: rgba(0,0,0,.7);
+		font-size: 2.65rem;
+		letter-spacing: 2.5px;
+		line-height: 3rem;
+        margin-bottom: 15px;
+        margin-top: 43px;
+
+        @media (max-width: 767px) {
+			font-size: 1.8rem;
+        }
+	}
+
+	.description {
+		font-weight: 300;
+		font-size: 24px;
+		color: rgba(0,0,0,54);
+		margin-left: $decor_m;
+		line-height: 1.85rem;
+		max-width: 740px;
+
+		@media(max-width: 1199px){
+			font-size: 20px;
+		}
+
+		@media (max-width: 767px) {
+			font-size: 14px;
+		}
+
+	}
+
+	.wrapper-items {
+	    max-width: 880px;
+	    margin: 0 auto;
+
+	    .item-case {
+		    margin: 13px 3px 34px;
+	    	
+	    	@media (max-width: 767px) {
+				text-align: center;
+			}
+		}
+
+		.image {
+			cursor: pointer;
+
+			img {
+			    max-width: 100%;
+			}
+		}
+	}
+}

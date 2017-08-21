@@ -1,0 +1,30 @@
+/* ---------------------------------------
+-----Copyright © 2017 Dmitriy Naprienko
+---------- dev. Pavel Ugrynovych (Paul Lauer)
+------------------------------------------ */
+/* ------------------------------------ */
+/* ---------- Bootstrap GRID ---------- */
+/* ------------------------------------ */
+@import "include/_variables";
+@import "bootstrap";
+@import "include/_mixin";
+/* ------------------------------------ */
+/* --------- *Bootstrap GRID* --------- */
+/* ------------------------------------ */
+@import "hover";
+/* ------------------------------------ */
+/* -------------- fonts --------------- */
+/* ------------------------------------ */
+@import "include/fonts";
+
+*, a {
+	outline: none;
+}
+
+@import "styles/_theme";
+@import "styles/1th-section";
+@import "styles/common/header";
+@import "styles/2th-section";
+@import "styles/3th-section";
+@import "styles/4th-section";
+@import "styles/feedback";

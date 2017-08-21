@@ -1,0 +1,65 @@
+/* 1th-section */
+.section-1 {
+	background: url('../../images/bg/1thSection.jpg');
+	height: 648px;
+
+    @media (max-width: 767px) {
+		height: auto;
+    }
+
+	.section-1-inner {
+		min-height: 550px;
+		margin-top: 20px;
+
+        @media (max-width: 767px) {
+			min-height: 420px;
+		}
+
+		.title {
+			color: $white;
+			letter-spacing: 5.5px;
+			word-spacing: 3px;
+		    margin-bottom: 1.25rem;
+		}
+
+		.startlabel {
+			color: $white;
+			padding: 11px;
+		    max-width: 269px;
+			font-weight: 500;
+		    font-size: 1.12rem;
+			text-align: center;
+		    margin-bottom: 1.2rem;
+			margin-left: $decor_m;
+    		background: rgba(255,255,255,.4);
+
+			@media(max-width: 1199px){
+			    font-size: 1rem;
+			    max-width: 245px;
+			}
+
+			strong {
+				font-weight: 900;
+			}
+		}
+
+		.description {
+			margin-left: $decor_m;
+			color: $white;
+			font-family: $font_os;
+		    font-size: 1.125rem;
+			max-width: 500px;
+			line-height: 1.4rem;
+			font-weight: normal;
+		    margin-bottom: 1.55rem;
+
+		    @media(max-width: 1199px){
+			    font-size: 1rem;
+			}
+		}
+
+		.btn {
+			margin-left: $decor_m;
+		}
+	}
+}

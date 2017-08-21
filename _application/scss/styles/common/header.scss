@@ -1,0 +1,70 @@
+/* header */
+header {
+	padding: 16px 0 0;
+
+	.logo-wrapper {
+		margin: 4px 0;
+		max-width: 125px;
+		float: left;
+		height: 33px;
+
+		img {
+			max-width: 100%;
+		}
+
+    	@media (max-width: 499px) {
+    		margin: 0 auto;
+    		float: none;
+    		margin-bottom: 15px;
+    	}
+
+	}
+
+	.border {
+		width: 100%;
+		border-bottom: 4px solid rgba(255,255,255,0.7);
+		padding-bottom: 14px;
+	}
+
+	.pull-right {
+		float: right;
+
+		.btn {
+			font-size: 13px;
+			margin-left: 27px;
+
+			@media (max-width: 499px) {
+	    		margin: 0 auto;
+	    		float: none;
+	    		margin-top: 15px;
+				display: block;
+	    	}
+		}
+
+
+    	@media (max-width: 499px) {
+    		float: none;
+    	}
+	}
+
+	a.email {
+		color: $white;
+		font-family: $font;
+		font-weight: 300;
+		font-size: 18px;
+
+    	@media (max-width: 767px) {
+			font-size: 16px;
+    	}
+
+    	@media (max-width: 499px) {
+    		margin: 0 auto;
+    		float: none;
+    		margin-top: 15px;
+			display: block;
+			text-align: center;
+    	}
+
+	}
+
+}

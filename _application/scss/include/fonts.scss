@@ -1,0 +1,66 @@
+/* ---------------FONTS---------------- */
+/* ------------------------------------ */
+@font-face {
+  font-family: 'ds';
+  src:  url('#{$icomoon-font-path}/ds.eot?eq2j21');
+  src:  url('#{$icomoon-font-path}/ds.eot?eq2j21#iefix') format('embedded-opentype'),
+    url('#{$icomoon-font-path}/ds.ttf?eq2j21') format('truetype'),
+    url('#{$icomoon-font-path}/ds.woff?eq2j21') format('woff'),
+    url('#{$icomoon-font-path}/ds.svg?eq2j21#ds') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+[class^="ds-"], [class*=" ds-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'ds' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.ds-star {
+  &:before {
+    content: $ds-star;
+  }
+}
+.ds-user {
+  &:before {
+    content: $ds-user;
+  }
+}
+.ds-bell {
+  &:before {
+    content: $ds-bell;
+  }
+}
+.ds-playCase {
+  &:before {
+    content: $ds-playCase;
+  }
+}
+.ds-check {
+  &:before {
+    content: $ds-check;
+  }
+}
+.ds-mail {
+  &:before {
+    content: $ds-mail;
+  }
+}
+.ds-video {
+  &:before {
+    content: $ds-video;
+  }
+}
+
+/* ------------------------------------ */
+/* ------------*FONTS END*------------- */

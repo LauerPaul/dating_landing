@@ -1,0 +1,100 @@
+.btn {
+	text-transform: uppercase;
+	cursor: pointer;
+}
+h1, h2, h3, h4 {
+	font-weight: 900;
+}
+
+@media(max-width: 1199px){
+	.h1, h1 {
+		font-size: 2.1rem;
+	}
+}
+@media (max-width: 767px) {
+    .btn {
+	    font-size: .9rem;
+    }
+}
+
+.decor {
+	position: relative;
+	margin-left: $decor_ml;
+	padding-left: $decor_pl;
+
+	&::before {
+		content: '';
+		height: 4px;
+		width: 40px;
+		background: $blue;
+		display: inline-block;
+		position: absolute;
+		top: -50%;
+		bottom: -50%;
+		right: 100%;
+		margin: auto;
+	}
+
+	&.decorFirstLine {
+		&::before {
+			top: 23px;
+			bottom: auto;
+		}
+	}
+
+}
+
+.btn-default {
+	padding: .95rem 2.7rem;
+	background: rgba(255,255,255,0);
+	border: 2px solid $white;
+	line-height: .9rem;
+	color: $white;
+	@include transition(all 0.2s);
+
+	&:hover {
+		background: rgba(255,255,255,1);
+		color: $blue;
+	}
+}
+
+input.form-control {
+    border: none;
+    border-bottom: 2px solid $white;
+    font-size: 14px;
+    padding: 7px 9px;
+    margin-top: 6px;
+
+    &.error {
+    	color: $red;
+    }
+}
+.input-group {
+    margin-bottom: 25px;
+    position: relative;
+}
+
+.error-message {
+	background: $red;
+	color: $white;
+	@include border-radius(25px 25px 25px 22px);
+	padding: 5px 15px;
+	font-size: 14px;
+    position: absolute;
+    right: 0;
+    bottom: 9px;
+
+    &::before {
+    	content: '';
+		border: 11px solid transparent;
+		border-right: 5px solid $red;
+		border-bottom: 16px solid $red;
+		position: absolute;
+		right: calc(100% - 15px);
+		bottom: 0;
+    }
+}
+
+.typed-cursor {
+	display: none;
+}

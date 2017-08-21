@@ -1,0 +1,31 @@
+// feedback
+section.feedback
+	.container-fluid
+		.row
+			.container
+				.row
+					.col-md-12
+						h2.title.decor.decorFirstLine.wow.slideInUp.fadeIn(data-wow-duration="0.2s")
+							.wow.zoomIn(data-wow-delay="0.5s", data-wow-duration="0.4s") ВСЕГО ЧЕРЕЗ 30 ДНЕЙ<br>ГОТОВЫЙ И РАБОТАЮЩИЙ<br>СЕРВИС
+
+						form#feedback(action="", data-wow-delay="1s", data-wow-duration="0.5s").wow.flipInY
+							.input-group
+								input.form-control(type="text", name="name", placeholder="ВАШЕ ИМЯ")
+								.error-message(style="display: none;")
+							.input-group
+								input.form-control(type="email", name="email", placeholder="EMAIL", onfocusout="validate()")
+								.error-message(style="display: none;")
+							.input-group
+								input.form-control(type="text", name="message", placeholder="СООБЩЕНИЕ")
+								input(type="hidden", name="to", value="paul@lauer.agency")
+								input(type="hidden", name="from", value="DATING-SERVICE ПОД КЛЮЧ")
+								input(type="hidden", name="sub", value="Заявка с сайта")
+							.input-group
+								button.btn.btn-default(type="button", onclick="form_submit()") ОТПАРВИТЬ
+
+		
+script(src='js/jquery.min.js')
+script(src='js/tether.min.js')
+script(src='js/bootstrap.min.js')
+script(src='js/wow.min.js')
+script(src='js/main.js')

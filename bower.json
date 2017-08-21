@@ -1,0 +1,27 @@
+{
+  "name": "naprienko",
+  "description": "",
+  "main": "gulpfile.js",
+  "authors": [
+    "Paul Lauer <pavel@lauer.com.ua>"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/LauerPaul/Dmitry_Naprienko",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "v4.0.0-alpha.6",
+    "components-font-awesome": "^4.7.0",
+    "font-awesome-animation": "^0.0.10",
+    "hover": "^2.1.1",
+    "bower": "*",
+    "install": "^1.0.4",
+    "jquery": "^3.2.1",
+    "animate.css": "^3.5.2"
+  }
+}
