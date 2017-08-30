@@ -1,0 +1,63 @@
+// MODAL
+.modal-dialog {
+	img {
+		max-width: 100%;
+	}
+
+	.img-wrap {
+		max-width: 77%;
+		margin: 0 auto;
+		max-height: calc(100% - 90px);
+		overflow: hidden;
+	}
+
+	button.close {
+		position: absolute;
+		right: 0;
+	}
+
+	button.close,
+	.control-btn {
+		width: 50px;
+		height: 50px;
+		border: 2px solid rgba(255,255,255,0.7);
+		color: rgba(255,255,255,0.7);
+		outline: none;
+		
+	}
+	.control-btn {
+		display: block;
+		position: absolute;
+		left: 0;
+		top: -50%;
+		bottom: -50%;
+		margin: auto;
+		cursor: pointer;
+		text-align: center;
+		background: transparent;
+		opacity: 0.75;
+		
+		&:hover {
+			opacity: 1;
+		}
+		
+		> i {
+			color: rgba(255,255,255,0.8);
+			font-size: 36px;
+		}
+
+		&.next-btn {
+			right: 0;
+			left: auto;
+		}
+	}
+}
+
+.modal-content {
+    max-height: calc(100% - 60px);
+    overflow: hidden;
+}
+
+.modal-body {
+    max-height: calc(100% - 60px);
+}

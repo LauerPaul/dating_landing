@@ -1,7 +1,8 @@
 /* 1th-section */
 .section-1 {
-	background: url('../../images/bg/1thSection.jpg');
+	background: url('../../images/bg/1thSection.jpg') no-repeat center;
 	height: 648px;
+    background-size: cover;
 
     @media (max-width: 767px) {
 		height: auto;

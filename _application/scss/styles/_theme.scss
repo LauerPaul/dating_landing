@@ -11,6 +11,11 @@ h1, h2, h3, h4 {
 		font-size: 2.1rem;
 	}
 }
+@media (max-width: 480px) {
+	.h1, h1 {
+		font-size: 24px;
+	}
+}
 @media (max-width: 767px) {
     .btn {
 	    font-size: .9rem;
@@ -97,4 +102,45 @@ input.form-control {
 
 .typed-cursor {
 	display: none;
+}
+
+.wrapper-success {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background: rgba(0,0,0,.85);
+    z-index: 1000;
+    color: white;
+    
+    p.success {
+    	font-size: 18px;
+    	line-height: 24px;
+    	margin-bottom: 30px;
+    	
+    	&::before {
+    		top: 12px;
+    	}
+    }
+
+    button {
+		margin-left: $decor_m;
+    }
+}
+
+.jspVerticalBar {
+	right: 0px !important;
+	width: 8px !important;
+	background: transparent !important;
+}
+.jspTrack {
+	background: transparent !important;
+}
+.jspDrag {
+	border-radius: 4px !important;
+	background: #A5A5A5 !important;
+}
+.jspPane {
+	width: 100% !important;
 }

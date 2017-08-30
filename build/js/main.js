@@ -1,33 +1,14 @@
+var api,
 settings = {
-	title_class: '.title',
-	dataAttr: 'data-text',
 	sections: ['.section-1', '.section-2', '.section-3', '.section-4', '.feedback'],
 	feedbackSection: '.feedback'
 },
 // constructor
 run = function(){
-	// objects
-	for (var i = 0; i < settings.sections.length; i++) {
-		if(i==0 && typeof settings.objects == 'undefined'){ settings.objects = []; }
-		settings.objects.push(settings.sections[i]+ ' ' + settings.title_class);
-	}
-	// options
-	for (var i = 0; i < settings.sections.length; i++) {
-		if(i==0 && typeof settings.options == 'undefined'){ settings.options = []; }
-		settings.options.push({
-			strings: [$(settings.objects[i]).attr(settings.dataAttr)],
-			typeSpeed: 10
-		});
-	}
 	// offset top sections
 	for (var i = 0; i < settings.sections.length; i++) {
 		if(i==0 && typeof settings.sectionsPosition == 'undefined'){ settings.sectionsPosition = []; }
 		settings.sectionsPosition.push($(settings.sections[i]).offset().top);
-	}
-	// offset top sections
-	for (var i = 0; i < settings.sections.length; i++) {
-		if(i==0 && typeof settings.status == 'undefined'){ settings.status = []; }
-		settings.status.push(false);
 	}
 },
 // Scroll to form feedback
@@ -44,7 +25,7 @@ validate = function(){
 		status = {'email': false, 'name': false};
 
 	if(email != '') {
-	    var pattern = /^([a-z0-9_\.-])+@[a-z0-9-]+\.([a-z]{2,4}\.)?[a-z]{2,4}$/i;
+	    var pattern = /^([a-z0-9_\.-])+@[a-z0-9-]+\.([a-z]{2,4}\.)?[a-z]{2,8}$/i;
 	    if(!pattern.test(email)){
 	    	email_input.addClass('error').next('.error-message').text('Вы ввели некорректный email').show();
     		status.email = false;
@@ -70,15 +51,82 @@ validate = function(){
 },
 form_submit = function(){
 	var form_el = $('form#feedback'),
-		valid = validate();
+		valid = validate(),
+		serialize = form_el.serialize();
 
 	if(valid) {
-		
+		$.ajax({
+			url: 'send.php',
+			type: 'POST',
+			data: serialize,
+			dataType: 'json',
+			success: function(data){
+				if(data == 'SENDED') {
+					$.ajax({
+						url: 'send-success.html',
+						type: 'POST',
+						success: function(data){
+							$('body').append(data);
+							$('body').css({'overflow' : "hidden"});
+						},
+						error: function(er_log){
+							console.log(er_log);
+						}
+					});		
+				}
+			},
+			error: function(er_log){
+				console.log(er_log);
+			}
+		});		
 	}
+},
+close_success = function(){
+	$('#Success').remove();
+	$('body').css({'overflow' : "auto"});
+},
+loadModalImg = function(id){
+	var id_ = $('#' + id),
+		data = id_.attr('data-image'),
+		next = id_.attr('data-next'),
+		prev = id_.attr('data-prev'),
+		modal = $('#myModal'),
+		modal_img = $('.img-wrap img', modal),
+		modal_next = $('.next-btn.control-btn', modal),
+		modal_prev = $('.prev-btn.control-btn', modal);
+
+	api.destroy();
+	modal_img.attr('src', 'images/thumbnails/' + data);
+	modal_next.attr('onclick', 'loadModalImg(\'' + next + '\')');
+	modal_prev.attr('onclick', 'loadModalImg(\'' + prev + '\')');
+	setTimeout(function(){
+		var sP = $('.img-wrap').jScrollPane();
+		api = sP.data('jsp');
+	}, 200);
 }
 
 // DOCUMENT READY
 $(document).ready(function(e){
 	run();
 	new WOW().init();
+});
+
+$(document).on('click','.image', function(){
+	var this_ = $(this),
+		data = this_.attr('data-image'),
+		next = this_.attr('data-next'),
+		prev = this_.attr('data-prev'),
+		modal = $('#myModal'),
+		modal_img = $('.img-wrap img', modal),
+		modal_next = $('.next-btn.control-btn', modal),
+		modal_prev = $('.prev-btn.control-btn', modal);
+
+	modal_img.attr('src', 'images/thumbnails/' + data);
+	modal_next.attr('onclick', 'loadModalImg(\'' + next + '\')');
+	modal_prev.attr('onclick', 'loadModalImg(\'' + prev + '\')');
+	modal.modal('show')
+	setTimeout(function(){
+		var sP = $('.img-wrap').jScrollPane();
+		api = sP.data('jsp');
+	}, 500);
 });

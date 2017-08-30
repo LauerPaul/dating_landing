@@ -1,0 +1,15 @@
+// MODAL 
+.modal.fade#myModal(tabindex="-1", role="dialog", aria-labelledby="myModalLabel", aria-hidden="true")
+	.modal-dialog(role="document")
+		.modal-content
+			.modal-body
+				button.close.pull-right(data-dismiss="modal", aria-label="Close", type="button")
+					span(aria-hidden="true")
+						|&times;
+				button.prev-btn.control-btn(onclick="loadModalImg()")
+					i.fa.fa-angle-left
+				.img-wrap
+					img(src="", alt="")
+				button.next-btn.control-btn(onclick="loadModalImg()")
+					i.fa.fa-angle-right
+
